@@ -1,0 +1,287 @@
+:root {
+    font-size: 16px;
+    font-family: 'Open Sans';
+    --text-primary: #ffffff;
+    --text-secondary: rgb(255, 255, 255);
+    --bg-primary: #23232e;
+    --bg-secondary: #141418;
+    --transition-speed: 750ms;
+}
+
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar {
+    width: 0.85rem;
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e1e24;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(156, 2, 97);
+}
+
+/* main {
+    margin-left: 5rem;
+    padding: 1rem;
+} */
+
+
+/* Style the navigation bar, for both small screens and large screens */
+
+.navbar {
+    position: fixed;
+    background-color: var(--bg-primary);
+    transition: width 750ms ease;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+/* So that when we highlight it the whole are behind
+   is highlighted
+*/
+.nav-item {
+    width: 100%;
+}
+
+.nav-item:last-child {
+    margin-top: auto;
+}
+
+.nav-link-S,
+.nav-link {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: 500ms;
+}
+
+/* Don't make the S the same colour as the icons */
+.nav-link {
+    filter: grayscale(100%) opacity(1) brightness(400%); /* starts the icons off as grey */
+}
+
+
+/* 
+   The filter returns the icon back to its original color (violet) and
+   actually allows all of the colours to return to what we wish,
+   otherwise they stay greyed out.
+   It essentially removes the filters.
+   The background change highlights the whole item
+   to indicate it has been selected.
+   The color change sets the text to violet.
+*/
+.nav-link:hover{
+    filter: grayscale(0%) opacity(1) brightness(400%);
+    background: black;
+    color: var(--text-secondary);
+}
+
+.link-text {
+    display: none;
+    margin-left: 1rem;
+}
+
+/* The svg icons are purple (but don't appear it as they are greyscaled)
+   The width will always be 2 rem so they aren't too big
+   The margin pushes them 1.5rem from the left so that they are centralised (as their width is 2)
+*/ 
+.nav-link-S svg,
+.nav-link svg {
+    width: 2rem;
+    min-width: 2rem;
+    margin: 0 1.5rem;
+    color: rgb(35, 10, 145);
+}
+
+.nav-link-S svg {
+    color: white;
+}
+
+/* Increase the width of the icon when you hover over it*/
+/*
+.nav-link:hover svg {
+    width: 3.5rem;
+}
+*/
+
+
+
+
+
+.animated-icon {
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: var(--text-secondary);
+    background: black;
+    font-size: 1.5rem;
+    letter-spacing: 0.3ch;
+    width: 100%;
+}
+
+.animated-icon svg {
+    transform: rotate(0deg);
+    transition: transform var(--transition-speed) cubic-bezier(0, 0, 0.81, 1.64);
+}
+
+.navbar:hover .animated-icon svg {
+    transform: rotate(360deg);
+}
+
+
+/* Small screens only */
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0px;
+        width: 100vw;
+        height: 4rem;
+    }
+
+    .animated-icon {
+        display: none;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    /* Center the icons along the x-axis */
+    .nav-link {
+        justify-content: center;
+    }
+
+    /* Adjust the height so when you highlight it/hover over it, it
+       only highlights the correct height
+    */
+    .nav-link {
+        height: 4rem;
+    }
+
+    /* Remove the previously set gap on the main element*/
+    main {
+        margin: 0;
+    }
+    
+
+}
+
+/* Large screens only */
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0px;
+        width: 5rem;
+        height: 100vh;
+    }
+
+    /* Increase the nav bar width when you hover over it */
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    /* Display the text for the icon when the nav bar has been hovered over */
+    .navbar:hover .link-text {
+        display: inline;
+    }
+}
+
+
+/* Now style the main heading */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    background-image: url(./images/blue_gradient.jpg);
+    background-size: 100% 100%;
+    line-height: 8rem;
+    margin: 0 0 0 5rem;
+}
+
+p {
+    margin: 0 0 0 5rem;
+    padding: 1rem 1rem 0rem 1rem;
+}
+
+/* Slideshow */
+#slideshow {
+    overflow: hidden;
+    background: blue;
+}
+
+#slider figure {
+    position: relative;
+    width: 400%; /* As there are 4 images */
+    margin: 0;
+    left: 0;
+}
+
+/* Slide Down Stuff */
+.content {
+    background: white;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider-wrapper {
+    font-size: 40px;
+    color: black;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    height: 50px;
+    padding-left: 15px;
+    overflow: hidden;
+}
+
+.slider div {
+    color: white;
+    height: 50px;
+    margin-bottom: 50px;
+    padding: 2px 15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.slider-text1 {
+    background: red;
+    animation: slide-down 5s linear infinite;
+}
+.slider-text2 {
+    background: blue;
+    
+}
+.slider-text3 {
+    background: green;
+}
+
+@keyframes slide-down {
+    0% {margin-top: -300px}
+    10% {margin-top: -200px}
+    33% {margin-top: -200px}
+    43% {margin-top: -100px}
+    66% {margin-top: -100px}
+    76% {margin-top: 0px}
+    100% {margin-top: 0px}
+}
