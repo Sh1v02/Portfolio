@@ -220,14 +220,54 @@ p {
 /* Slideshow */
 #slideshow {
     overflow: hidden;
-    background: blue;
+    height: 10rem;
+    margin-left: 5rem;
 }
 
-#slider figure {
+#slideshow figure {
     position: relative;
-    width: 400%; /* As there are 4 images */
+    width: 500%; /* As there are 5 images */
     margin: 0;
     left: 0;
+    animation: 20s slideshow-animate infinite;
+}
+
+#slideshow figure img {
+    width: 20%;
+    height: 10rem;
+    object-fit: scale-down;
+    float: left;
+    
+}
+
+@keyframes slideshow-animate {
+    0% {
+        left: 0
+    }
+    20% {
+        left: 0
+    }
+    25% {
+        left: -100%;
+    }
+    45% {
+        left: -100%;
+    }
+    50% {
+        left: -200%;
+    }
+    70% {
+        left: -200%;
+    }
+    75% {
+        left: -300%;
+    }
+    95% {
+        left: -300%;
+    }
+    100% {
+        left: -400%;
+    }
 }
 
 /* Slide Down Stuff */
