@@ -178,11 +178,15 @@ section div {
     width: 100%;
 }
 section .down {
+    color: white;
+    opacity: 0.2;
     position: relative;
     top: 42%;
 }
 
 section .up {
+    color: white;
+    opacity: 0.2;
     position: relative;
     bottom: 42%;
 }
@@ -199,18 +203,10 @@ section .up {
     width: 0.85rem;
 }
 
-#home {
+#home, #about, #projects, #contact {
     background: #23232e;
 }
-#about {
-    background: #23232e;
-}
-#projects {
-    background: #23232e;
-}
-#contact {
-    background: #23232e;
-}
+
 
 
 
