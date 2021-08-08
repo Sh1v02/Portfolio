@@ -217,24 +217,27 @@ p {
     padding: 1rem 1rem 0rem 1rem;
 }
 
-/* Slideshow */
-#slideshow {
-    overflow: hidden;
-    height: 10rem;
-    margin-left: 5rem;
-}
 
-#slideshow figure {
+
+/* Slideshow */
+/* #slideshow {
+    background-color: black;
+    overflow: hidden;
+    height: 15rem;
+    margin-left: 5rem;
+} */
+
+/* #slideshow figure {
     position: relative;
-    width: 500%; /* As there are 5 images */
-    margin: 0;
+    width: 500%; */ /* As there are 5 images */
+/*     margin: 0;
     left: 0;
     animation: 20s slideshow-animate infinite;
-}
+} */
 
-#slideshow figure img {
+/* #slideshow figure img {
     width: 20%;
-    height: 10rem;
+    height: 15rem;
     object-fit: scale-down;
     float: left;
     
@@ -268,10 +271,12 @@ p {
     100% {
         left: -400%;
     }
-}
+} */
+
+
 
 /* Slide Down Stuff */
-.content {
+/* .content {
     background: white;
     height: 10rem;
     display: flex;
@@ -324,4 +329,4 @@ p {
     66% {margin-top: -100px}
     76% {margin-top: 0px}
     100% {margin-top: 0px}
-}
+} */
