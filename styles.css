@@ -1,9 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
 :root {
     font-size: 16px;
     font-family: 'Open Sans';
     --text-primary: #ffffff;
     --text-secondary: rgb(255, 255, 255);
-    --bg-primary: #23232e;
+    --bg-primary: #1e1e29;
     --bg-secondary: #141418;
     --transition-speed: 750ms;
 }
@@ -11,8 +17,6 @@
 body {
     color: black;
     background-color: white;
-    margin: 0;
-    padding: 0;
 }
 
 body::-webkit-scrollbar {
@@ -121,10 +125,6 @@ body::-webkit-scrollbar-thumb {
 }
 */
 
-
-
-
-
 .animated-icon {
     font-weight: bold;
     margin-bottom: 2rem;
@@ -144,6 +144,78 @@ body::-webkit-scrollbar-thumb {
 .navbar:hover .animated-icon svg {
     transform: rotate(360deg);
 }
+
+
+/* Now style the main heading */
+h1 {
+    /* font-size: 2rem;
+    text-align: center;
+    background-image: url(./images/blue_gradient.jpg);
+    background-size: 100% 100%;
+    line-height: 8rem;
+    margin-left: 5rem; */
+}
+
+
+
+/* Style the sections now */
+section {
+    margin-left: 5rem;
+    height: 100vh; /* Take up the full amount of screen space, vertically */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    scroll-snap-align: start;
+}
+
+section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+section .down {
+    position: relative;
+    top: 42%;
+}
+
+section .up {
+    position: relative;
+    bottom: 42%;
+}
+
+
+
+.container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.container::-webkit-scrollbar {
+    width: 0.85rem;
+}
+
+#home {
+    background: #23232e;
+}
+#about {
+    background: #23232e;
+}
+#projects {
+    background: #23232e;
+}
+#contact {
+    background: #23232e;
+}
+
+
+
+
+
 
 
 /* Small screens only */
@@ -174,6 +246,16 @@ body::-webkit-scrollbar-thumb {
         height: 4rem;
     }
 
+    section .down {
+        position: relative;
+        top: 35%;
+    }
+
+    
+
+    h1 {
+        margin-left: 0;
+    }
     /* Remove the previously set gap on the main element*/
     main {
         margin: 0;
@@ -202,20 +284,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 
-/* Now style the main heading */
-h1 {
-    font-size: 2rem;
-    text-align: center;
-    background-image: url(./images/blue_gradient.jpg);
-    background-size: 100% 100%;
-    line-height: 8rem;
-    margin: 0 0 0 5rem;
-}
 
-p {
-    margin: 0 0 0 5rem;
-    padding: 1rem 1rem 0rem 1rem;
-}
 
 
 
