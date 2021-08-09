@@ -41,7 +41,7 @@ body::-webkit-scrollbar-thumb {
 
 .navbar {
     position: fixed;
-    background-color: var(--bg-primary);
+    background: #292938;
     transition: width 750ms ease;
 }
 
@@ -209,7 +209,19 @@ section .up {
 }
 
 #home, #about, #projects, #contact {
-    background: #23232e;
+    background-image: linear-gradient(rgb(20, 30, 48), rgb(21.5, 37.25, 57.25));
+}
+
+#about {
+    background-image: linear-gradient(rgb(21.5, 37.25, 57.25), rgb(23, 44.5, 66.5));
+}
+
+#projects {
+    background-image: linear-gradient(rgb(23, 44.5, 66.5), rgb(24.5, 51.75, 75.75));
+}
+
+#contact {
+    background-image: linear-gradient(rgb(24.5, 51.75, 75.75), rgb(26, 59, 85));
 }
 
 #home h1{
