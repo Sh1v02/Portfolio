@@ -164,12 +164,16 @@
     <!-- HOME page -->
     <div class="container">
         <section id="Home">
-            <div>
-                <h1 class="firstname">Shivam</h1>
-                <h1 class="surname">Sethi</h1>
-                <a class="homeDown" href="#About">
-                    <i class="fas fa-chevron-down" style="font-size:48px;"></i>
-                </a>
+            <div class="wrapper">
+                <div id="nameHeader">
+                    <h1 class="firstname">Shivam</h1>
+                    <h1 class="surname">Sethi</h1>
+                </div>
+                <div class="downArrow">
+                    <a class="homeDown" href="#About">
+                        <i class="fas fa-chevron-down" style="font-size:48px;"></i>
+                    </a>
+                </div>
             </div>
             
         </section>
@@ -177,26 +181,31 @@
         <!-- ABOUT page -->
         <section id="About">
             <div class="wrapper">
-                <a class="up" href="#Home">
-                    <i class="fas fa-chevron-up" style="font-size:48px;"></i>
-                </a>
+                <div class="upArrow">
+                    <a class="up" href="#Home">
+                        <i class="fas fa-chevron-up" style="font-size:48px;"></i>
+                    </a>
+                </div>
                 <div class="contents">
                     <div class = "aboutHeader">
                         <h1>About</h1>
                     </div>
                     <div class="aboutInfo">
                         <h2>What do I do?</h2>
-                        <p>- Current Computer Science with AI student</p>
-                        <p>- Studying at the Univerity of Bath</p>
+                        <p> - Student at the University of Bath</p>
+                        <p> - Current second year student</p>
+                        <p> - Studying "Computer Science with AI"</p>
                     </div>
                     <div class="skillsInfo">
                         <h2>Skills</h2>
-                        <ul>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                            <li>Java</li>
-                        </ul>
+                        <div class="skillsList">
+                            <h3>Java</h3>
+                            <h3>Python</h3>
+                            <h3>HTML</h3>
+                            <h3>CSS</h3>
+                            <h3>JavaScript</h3>
+                            <h3>Git</h3>
+                        </div>
                         <!-- <div class="imageGrid">
                             <div class="column">
                                 <img src="images/html_icon.png">
@@ -209,26 +218,41 @@
                         </div> -->
                     </div>
                 </div>
-                
-
-
-                <a class="down" href="#Projects">
-                    <i class="fas fa-chevron-down" style="font-size:48px;"></i>
-                </a>
+                <div class="upArrow">
+                    <a class="down" href="#Projects">
+                        <i class="fas fa-chevron-down" style="font-size:48px;"></i>
+                    </a>
+                </div>
             </div>
         </section>
 
         <!-- PROJECTS page -->
         <section id="Projects">
-            <div>
-                <a class="up" href="#About">
-                    <i class="fas fa-chevron-up" style="font-size:48px;"></i>
-                </a>
-                <h1>Projects</h1>
-                <a class="down" href="#Contact">
-                    <i class="fas fa-chevron-down" style="font-size:48px;"></i>
-                </a>
+            <div class="wrapper">
+                <div class="upArrow">
+                    <a class="up" href="#About">
+                        <i class="fas fa-chevron-up" style="font-size:48px;"></i>
+                    </a>
+                </div>
+                <div class="contents">
+                    <h1>Projects</h1>
+                    <section id="recentProjects">
+
+                    </section>
+                    <section id="inDevelopment">
+                        
+                    </section>
+                </div>
+
+                <div class="downArrow">>
+                    <a class="down" href="#Contact">
+                        <i class="fas fa-chevron-down" style="font-size:48px;"></i>
+                    </a>
+                </div>
+            
             </div>
+
+        <!-- CONTACT page -->
         </section>
         <section id="Contact">
             <div>
