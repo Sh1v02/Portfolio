@@ -43,6 +43,7 @@ body::-webkit-scrollbar-thumb {
     position: fixed;
     background: #292938;
     transition: width 750ms ease;
+    z-index: 1; /* Allow the navbar to overlap whatever it needs to */
 }
 
 .navbar-nav {
@@ -168,6 +169,9 @@ section {
     color: white;
     scroll-snap-align: start;
 }
+#projects {
+    height: 200vh;
+}
 
 section div {
     display: flex;
@@ -255,11 +259,11 @@ section h1 {
     font-size: 4rem;
 }
 .firstname {
-    left: 25%;
+    left: 20%;
     bottom: 10%;
 }
 .surname {
-    left: 30%;
+    left: 25%;
     bottom: 19%;
 }
 #home .downArrow {
@@ -335,7 +339,9 @@ section h1 {
 /* Style the PROJECTS page */
 #Projects .contents {
     width: 100%;
-    height: 80%;
+    height: 90%;
+    position: relative;
+    bottom: 3%;
 }
 #projects section{
     margin: 0;
@@ -343,11 +349,76 @@ section h1 {
 #projects #recentProjects, #inDevelopment{
     position: relative;
     width: 100%;
-    height: 50%;
+    height: 40%;
 }
-#projects #recentProjects {
-    background: black;
+#projects .projectsHeader {
+    height: fit-content;
+    position: relative;
+    bottom: 5%;
 }
+#recentProjects {
+    position: relative;
+    bottom: 5%;
+}
+#recentProjects .projects {
+    width: 100%;
+    height: 100%;
+    margin: 0 2%;
+}
+#recentProjects .projects .gameJam, .economySimulator, .currentWebsite {
+    flex-basis: 30%;
+    overflow: hidden;
+}
+#recentProjects .gameJam, .economySimulator, .currentWebsite{
+    display: flex;
+    color: black;
+    border-radius: 12%;
+    background: rgba(255, 255, 255, 0.6)
+}
+/* The following can be carried out for all of the projects so doesn't need to
+   be specific as to what it is styling
+*/
+#recentProjects .title {
+    height: fit-content;
+    width: 80%;
+    background: purple;
+}
+#recentProjects .image {
+    height: 60%;
+    width: 90%;
+    position: relative;
+    bottom: 2%;
+}
+#recentProjects .image img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    /* border-radius: 50%; */
+    object-fit: contain;
+}
+#recentProjects .description {
+    height: 20%;
+    position: relative;
+    bottom: 5%;
+}
+#recentProjects .description p {
+    width: 80%;
+    margin-bottom: 10px;
+    text-align: center;
+    flex-wrap: wrap;
+}
+#recentProjects .links {
+    height: 10%;
+    width: 40%;
+    position: relative;
+    border-radius: 25px;
+    background: purple;
+}
+#recentProjects .links h3 {
+    color: white;
+    text-decoration: underline white;
+}
+
 #projects #inDevelopment {
     background: red;
 }
@@ -364,7 +435,7 @@ section h1 {
 
 
 /* Small screens only */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 900px) {
     .navbar {
         bottom: 0px;
         width: 100vw;
@@ -416,12 +487,48 @@ section h1 {
     .skillsList h3{
         width: 180%;
     }
+    section {
+        height: 200vh;
+    }
+    #projects {
+        height: 400vh;
+    }
+    /* For the Projects Screen */
+    #recentProjects .projects .gameJam, .economySimulator, .currentWebsite {
+        border-radius: 0%;
+        background: rgba(255, 255, 255, 0.6);
+        flex-basis:100%;
+        height: 500px;
+        color: black;
+        margin: 10px 0;
+        position: relative;
+        height: 1000%;
+    }
+    #recentProjects .title {
+        width: 45%;
+    }
+    #recentProjects .image {
+        width: 50%;
+        margin-left: 1%;
+    }
+    #recentProjects .image img {
+        border-radius: 100px;
+        object-fit: contain;
+    }
+    
+    #recentProjects .description p {
+        width: 100%;
+        height: 1000%;
+        font-size: 0.8rem;
+        margin-bottom: 0;
+    }
+
     
 
 }
 
 /* Large screens only */
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 900px) {
     .navbar {
         top: 0px;
         width: 5rem;
@@ -436,6 +543,11 @@ section h1 {
     /* Display the text for the icon when the nav bar has been hovered over */
     .navbar:hover .link-text {
         display: inline;
+    }
+    #recentProjects .projects {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
     }
 }
 
