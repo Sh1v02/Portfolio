@@ -1,3 +1,5 @@
 # Portfolio
 A website where you can view my projects
-## First time attempting web dev so the website will likely change a lot as I progress ##
+
+This is my first time creating any web application. This website will most likely be re-designed
+at some point in the future, however currently you are able to view my most recent projects.
