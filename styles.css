@@ -348,10 +348,16 @@ section h1 {
 }
 .upArrow, .downArrow {
     height: 5%;
+    position: relative;
+}
+.upArrow {
+    top: 2%;
 }
 .downArrow {
-    position: relative;
     bottom: 5%;
+}
+#about .upArrow {
+    top: -4%;
 }
 
 
@@ -377,12 +383,12 @@ section h1 {
 #projects .projectsHeader {
     height: fit-content;
     position: relative;
-    bottom: 5%;
+    bottom: 1%;
 }
 #recentProjects {
     overflow-y: scroll;
     position: relative;
-    bottom: 8%;
+    bottom: 5%;
 }
 #recentProjects .projects {
     width: 100%;
@@ -475,9 +481,42 @@ section h1 {
 #projects #inDevelopment {
     background: red;
 }
-/* #projects .upArrow, .downArrow {
-    height: 5%;
-} */
+
+
+/* Contact Page */
+#Contact .contents {
+    display: flex;
+}
+.contactHeader {
+    position: relative;
+    bottom: 1%;
+    height: fit-content;
+    text-align: center;
+    flex: 1;
+
+}
+.socials {
+    position: relative;
+    flex: 2;
+    margin: 90px 20%;
+    max-height: 450px;
+    min-height: 400px;
+    justify-content: space-around;
+
+    display: flex;
+}
+.socials div {
+    max-height: 450px;
+}
+.socials a {
+    color: white;
+    margin-bottom: 40px;
+    max-height: 180px;
+}
+.socials i {
+    flex-basis: 33%;
+    font-size: calc(20px + 9vw);
+}
 
 
 
@@ -527,7 +566,7 @@ section h1 {
     .down {
         position: relative;
         /* top: -32%; */
-        bottom: calc(30px + 10%);
+        bottom: calc(10px + 10%);
     }
     .skillsInfo {
         width: 80%;
@@ -543,10 +582,18 @@ section h1 {
     }
 
     .skillsList h3{
-        min-width: calc(5px + 20vw);
+        min-width: calc(5px + auto);
     }
     .firstname, .surname {
-        font-size: 7vw;
+        font-size: 9vw;
+    }
+    .firstname {
+        left: 20%;
+        bottom: 10%;
+    }
+    .surname {
+        left: 25%;
+        bottom: 19%;
     }
     #recentProjects .projects {
         /* overflow-y: scroll; */
