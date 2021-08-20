@@ -229,6 +229,7 @@ section h1 {
     font-family: 'Verdana';
     padding: 2rem;
     position: relative;
+    text-align: center;
 }
 
 .wrapper {
