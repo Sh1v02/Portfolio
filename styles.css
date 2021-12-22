@@ -22,11 +22,9 @@ body {
 /* body::-webkit-scrollbar {
     width: 0.85rem;
 }
-
 body::-webkit-scrollbar-track {
     background: #1e1e24;
 }
-
 body::-webkit-scrollbar-thumb {
     background: rgb(156, 2, 97);
 } */
@@ -756,7 +754,6 @@ section h1 {
     float: left;
     
 }
-
 @keyframes slideshow-animate {
     0% {
         left: 0
@@ -797,7 +794,6 @@ section h1 {
     align-items: center;
     justify-content: center;
 }
-
 .slider-wrapper {
     font-size: 40px;
     color: black;
@@ -807,13 +803,11 @@ section h1 {
     align-items: center;
     justify-content: center;
 }
-
 .slider {
     height: 50px;
     padding-left: 15px;
     overflow: hidden;
 }
-
 .slider div {
     color: white;
     height: 50px;
@@ -822,7 +816,6 @@ section h1 {
     text-align: center;
     box-sizing: border-box;
 }
-
 .slider-text1 {
     background: red;
     animation: slide-down 5s linear infinite;
@@ -834,7 +827,6 @@ section h1 {
 .slider-text3 {
     background: green;
 }
-
 @keyframes slide-down {
     0% {margin-top: -300px}
     10% {margin-top: -200px}
