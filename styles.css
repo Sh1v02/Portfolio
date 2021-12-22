@@ -400,13 +400,13 @@ section h1 {
     background-color: rgba(255, 255, 255, 1)
 }
 
-#recentProjects .projects .gameJam, .economySimulator, .currentWebsite {
+#recentProjects .projects .gameJam, .economySimulator, .solarSystem {
     flex-basis: 30%;
     overflow: hidden;
     flex-wrap: wrap;
     
 }
-#recentProjects .gameJam, .economySimulator, .currentWebsite{
+#recentProjects .gameJam, .economySimulator, .solarSystem{
     display: flex;
     color: rgba(255, 255, 255, 0.7);
     border-radius: 12%;
@@ -613,7 +613,7 @@ section h1 {
         flex-wrap: wrap;
         height: 70%;
     }
-    #recentProjects .gameJam, .economySimulator, .currentWebsite {
+    #recentProjects .gameJam, .economySimulator, .solarSystem {
         margin: 10px 5px;
         min-width: 280px;
         min-height: 400px;
@@ -631,49 +631,6 @@ section h1 {
     .socials i {
         font-size: calc(30px + 8vw);
     }
-    
-
-
-
-
-    
-    /* section {
-        height: 200vh;
-    }
-    
-    #projects {
-        height: 400vh;
-    }  */
-    /* For the Projects Screen */
-    /* #recentProjects .projects .gameJam, .economySimulator, .currentWebsite {
-        border-radius: 0%;
-        background: rgba(255, 255, 255, 0.6);
-        flex-basis:100%;
-        height: 500px;
-        color: black;
-        margin: 10px 0;
-        position: relative;
-        height: 1000%;
-    }
-    #recentProjects .title {
-        width: 45%;
-    }
-    #recentProjects .image {
-        width: 50%;
-        margin-left: 1%;
-    }
-    #recentProjects .image img {
-        border-radius: 100px;
-        object-fit: contain;
-    }
-    
-    #recentProjects .description p {
-        width: 100%;
-        height: 1000%;
-        font-size: 0.8rem;
-        margin-bottom: 0;
-    } */
-
     
 
 }
@@ -718,121 +675,10 @@ section h1 {
         flex-direction: row;
         justify-content: space-around;
     }
-    #recentProjects .gameJam, .economySimulator, .currentWebsite {
+    #recentProjects .gameJam, .economySimulator, .solarSystem {
         margin-top: 70px;
     }
     #recentProjects .links h3 {
         font-size: 1.2rem;
     }
 }
-
-
-
-
-
-
-/* Slideshow */
-/* #slideshow {
-    background-color: black;
-    overflow: hidden;
-    height: 15rem;
-    margin-left: 5rem;
-} */
-
-/* #slideshow figure {
-    position: relative;
-    width: 500%; */ /* As there are 5 images */
-/*     margin: 0;
-    left: 0;
-    animation: 20s slideshow-animate infinite;
-} */
-
-/* #slideshow figure img {
-    width: 20%;
-    height: 15rem;
-    object-fit: scale-down;
-    float: left;
-    
-}
-@keyframes slideshow-animate {
-    0% {
-        left: 0
-    }
-    20% {
-        left: 0
-    }
-    25% {
-        left: -100%;
-    }
-    45% {
-        left: -100%;
-    }
-    50% {
-        left: -200%;
-    }
-    70% {
-        left: -200%;
-    }
-    75% {
-        left: -300%;
-    }
-    95% {
-        left: -300%;
-    }
-    100% {
-        left: -400%;
-    }
-} */
-
-
-
-/* Slide Down Stuff */
-/* .content {
-    background: white;
-    height: 10rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.slider-wrapper {
-    font-size: 40px;
-    color: black;
-    font-weight: bold;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.slider {
-    height: 50px;
-    padding-left: 15px;
-    overflow: hidden;
-}
-.slider div {
-    color: white;
-    height: 50px;
-    margin-bottom: 50px;
-    padding: 2px 15px;
-    text-align: center;
-    box-sizing: border-box;
-}
-.slider-text1 {
-    background: red;
-    animation: slide-down 5s linear infinite;
-}
-.slider-text2 {
-    background: blue;
-    
-}
-.slider-text3 {
-    background: green;
-}
-@keyframes slide-down {
-    0% {margin-top: -300px}
-    10% {margin-top: -200px}
-    33% {margin-top: -200px}
-    43% {margin-top: -100px}
-    66% {margin-top: -100px}
-    76% {margin-top: 0px}
-    100% {margin-top: 0px}
-} */

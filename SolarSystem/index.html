@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Solar System</title>
+
+    <!-- <script type="text/javascript" src="dat.gui.min.js"></script> -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="three-r134.js"></script>
+    <script src="orbit-controls.js"></script>
+
+    <script src="Scene.js"></script>
+    <script src="Planets.js"></script>
+    <script src="gui.js"></script>
+
+
+    <script>
+
+        document.addEventListener('keydown', handleKeyDown);
+
+
+        var sun, earth, moon;
+
+        var solarSystemSize = 0;
+        var planetCount = 0;
+        var sateliteCount = 0;
+
+        let planetData = []; // axisRotationSpeed, orbittingSpeed
+        let sateliteData = []; // axisRotationSpeed, orbittingSpeed
+
+        var solarSystem = new THREE.Group();
+        let mySolarSystem = [];
+        let satelites = [];
+
+        init();
+        createSun();
+        createInitialPlanets();
+        // createMoon();
+
+
+
+        function addToSolarSystem(toAdd) {
+            solarSystem.add(toAdd);
+            mySolarSystem.push(toAdd);
+            solarSystemSize++;
+        }
+
+        function addToPlanetData(axisRotation, orbittingSpeed) {
+            planetData.push(new Array(axisRotation, orbittingSpeed));
+            planetCount++;
+        }
+
+        function addToSateliteData(axisRotation, orbittingSunSpeed, orbittingParentSpeed) {
+            sateliteData.push(new Array(axisRotation, orbittingSunSpeed, orbittingParentSpeed));
+            sateliteCount++;
+        }
+
+        function createSun() {
+            const sunGeometry = new THREE.SphereGeometry(60);
+            const sunTexture = new THREE.TextureLoader().load("textures/sun.jpg");
+            const sunMaterial = new THREE.MeshBasicMaterial({ map: sunTexture });
+            sun = new THREE.Mesh(sunGeometry, sunMaterial);
+            addToSolarSystem(sun);
+        }
+
+        function createInitialPlanets() {
+            constructPlanet(12, "textures/mars.jpg", -150, 0.09, 1000);
+            constructPlanet(20, "textures/earth.jpg", -300, 0.04, 3000);
+            constructPlanet(40, "textures/saturn.jpg", -450, 0.02, 5000);
+            // constructPlanet(28, "textures/venus.jpg", -600, 0.01, 7000);
+        }
+
+        function createMoon() {
+
+            // Add the moon to the parent
+            var parent = solarSystem.children[2];
+            constructMoon(5, parent, 22, 0.05, 3000, 50);
+
+            parent = solarSystem.children[3];
+            constructMoon(9, parent, 90, 0.05, 5000, 100);
+        }
+
+
+        scene.add(solarSystem);
+
+        var animationFrame;
+        var animating = true;
+
+        var data;
+        const animate = function () {
+            animationFrame = requestAnimationFrame(animate);
+
+            var currentMoonIteration = 0;
+            for (let index = 1; index < solarSystemSize; index++) {
+                var planet = mySolarSystem[index];
+                // var data;
+                if (typeof planetData[index - 1] == 'undefined') {
+                    data = sateliteData[currentMoonIteration];
+                    orbitOnAxis(planet, data[0]);
+                    orbitSun(planet, data[1]);
+                    // console.log(index, data);
+                    currentMoonIteration++;
+                } else {
+                    data = planetData[index - 1];
+                    orbitOnAxis(planet, data[0]);
+                    orbitSun(planet, data[1]);
+                    // console.log(index, data);
+                }
+                console.log(index, data);
+
+
+            }
+
+
+
+            for (let index = 0; index < sateliteCount; index++) {
+                var satelite = satelites[index][0];
+                var parent = satelites[index][1];
+                data = sateliteData[index];
+                orbitPlanet(satelite, parent, data[2]);
+            }
+
+            renderer.render(scene, camera);
+        };
+
+        animate();
+
+        var controlsAnimationFrame;
+        function onlyMove() {
+            controlsAnimationFrame = requestAnimationFrame(onlyMove);
+            renderer.render(scene, camera);
+
+        }
+
+        function handleKeyDown(event) {
+
+            switch (event.key) {
+                case "s":
+                    animating = !animating;
+                    if (animating) {
+                        cancelAnimationFrame(onlyMove);
+                        animate();
+                    } else {
+                        cancelAnimationFrame(animationFrame);
+                        onlyMove();
+                    }
+            }
+        }
+
+
+    </script>
+</body>
+
+<div id="overlay">
+    <textarea id="speed">Speed</textarea>
+    <textarea id="distanceFromSun">Distance</textarea>
+    <textarea id="radius">Radius</textarea>
+    <textarea id="texture">TextureID</textarea>
+
+
+    <button id="confirm" , onclick="confirmPlanetCreation()">confirmChoices</button>
+
+</div>
+
+</html>
